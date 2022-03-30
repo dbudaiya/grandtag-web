@@ -14,6 +14,12 @@ const routes = [
     alias: "/about",
     component: () => import("../views/About.vue")
   },
+  {
+    path: "/video",
+    name: "video",
+    alias: "/video",
+    component: () => import("../views/Video.vue")
+  }
 ]
 
 const router = createRouter({
