@@ -11,7 +11,7 @@ interface MockData {
 
 var data = function () {
   let chartDatasskc: MockData | [] = [];   //Array<any>
-  Array.from({ length: 20 }, function () {
+  Array.from({ length: 120 }, function () {
     chartDatasskc.push({
       "name": Random.cname(),//随机生成中文名字
       'qq': /^\d{8,10}$/,

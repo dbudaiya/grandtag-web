@@ -1,16 +1,13 @@
 <template>
-  <div>
-sas
-  </div>
+  <div>sas</div>
 </template>
 
 <script>
 export default {
-    name:'footer-cpn'
-    
+  name: 'footer-cpn'
+
 }
 </script>
 
 <style>
-
 </style>

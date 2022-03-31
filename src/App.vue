@@ -1,19 +1,41 @@
-<script setup lang="ts">
+<script lang="ts">
+import { defineComponent, ref } from 'vue'
+import { darkTheme, GlobalThemeOverrides, NThemeEditor } from 'naive-ui';
+import Content from './Content.vue'
+
+export default defineComponent({
+  components: {
+    NThemeEditor,
+    Content
+  },
+  setup() {
+    const themeOverrides: GlobalThemeOverrides = {
+      common: {
+        primaryColor: '#FF0000',
+        fontWeight: '700'
+      },
+      Button: {
+        textColor: '#FF0000'
+      }
+    }
+    return {
+      darkTheme,
+      theme: ref(null),
+      themeOverrides
+    }
+  }
+})
 </script>
 
 <template>
-  <router-link to="/home">Home   ||   </router-link>
-  <router-link to="/about">About</router-link>
-  <router-view></router-view>
+  <n-config-provider :theme="theme" :theme-overrides="themeOverrides">
+    <n-theme-editor>
+      <n-message-provider>
+        <n-button @click="theme = darkTheme">深色</n-button>
+        <n-button @click="theme = null">浅色</n-button>
+        <Content />
+      </n-message-provider>
+        <n-global-style />
+    </n-theme-editor>
+  </n-config-provider>
 </template>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>

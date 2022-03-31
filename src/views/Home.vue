@@ -6,16 +6,6 @@
       <game-controller />
     </n-icon>
     <n-button @click="handleClick">naive-ui</n-button>
-
-    <iframe
-      width="560"
-      height="315"
-      src="https://www.youtube.com/embed/w-iLl7MwmsI?controls=0"
-      title="YouTube video player"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen
-    ></iframe>
   </div>
 </template>
 <script lang="ts">
@@ -24,9 +14,6 @@ import { defineComponent, computed } from 'vue';
 import { useStore } from 'vuex';
 
 export default defineComponent({
-  components: {
-    GameController,
-  },
   setup() {
     const store = useStore();
     const count = computed(() => store.state.home.count);
@@ -34,12 +21,16 @@ export default defineComponent({
       store.commit('home/add');
     };
     return {
-      handleClick,
+      GameController,
+      defineComponent,
+      computed,
+      useStore,
+      store,
       count,
-      GameController
+      handleClick,
     };
-  }
-})
+  },
+});
 </script>
 
 <style lang="less" scoped>

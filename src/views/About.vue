@@ -4,7 +4,13 @@
     <n-button @click="eventChangeLang('en')">英文</n-button>
     <n-button @click="eventChangeLang('zh-CN')">中文</n-button>
 
-    <div v-for="(item, index) in users" :key="item">{{ item['name'] }}</div>
+    <div v-for="(item, index) in users" :key="item">
+      <span>{{ item['name'] }}</span>
+      <span>{{ item['qq'] }}</span>
+      <span>{{ item['mtime'] }}</span>
+      <span>{{ item['stars'] }}</span>
+      <span>{{ item['add'] }}</span>
+    </div>
   </div>
 </template>
 
@@ -30,7 +36,12 @@ export default defineComponent({
         console.log(err)
       })
     })
-
+    const handler = () => {
+      // 需要确保已经在 setup 中执行了 window.$message = message
+      window.$message.success(
+        'Cause you walked hand in hand With another man in my place'
+      )
+    }
     const eventChangeLang = (lang: string) => {
       if (lang == 'en') {
         locale.value = lang
@@ -45,7 +56,8 @@ export default defineComponent({
 
     return {
       users,
-      eventChangeLang
+      eventChangeLang,
+      handler
     }
   }
 })

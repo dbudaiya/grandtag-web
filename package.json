@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development vite",
     "build": "vue-tsc --noEmit && vite build",
-    "preview": "vite preview",
+    "preview": "vite preview",  
     "cl": "rimraf node_modules"
   },
   "dependencies": {
