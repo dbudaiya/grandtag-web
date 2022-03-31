@@ -1,11 +1,12 @@
 <template>
-  <div>
-    <h1 class="bg-green-500 p-20">xiaopbudai</h1>
+  <!-- <h1 class="bg-green-500 p-20">xiaopbudai</h1>
     <h2>{{ count }}</h2>
     <n-icon size="40" color="#0e7a0d">
       <game-controller />
     </n-icon>
-    <n-button @click="handleClick">naive-ui</n-button>
+  <n-button @click="handleClick">naive-ui</n-button>-->
+  <div class="container bg-indigo-400 mx-auto">
+    <div class="text-4xl m-4 p-4 text-center">Home页面</div>
   </div>
 </template>
 <script lang="ts">

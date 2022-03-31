@@ -9,6 +9,7 @@ declare module 'vue' {
     Header: typeof import('./src/components/header/index.vue')['default']
     HeaderTop: typeof import('./src/components/header/headerTop/index.vue')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
+    Navbar: typeof import('./src/components/header/components/navbar.vue')['default']
     NavbarArea: typeof import('./src/components/header/navbarArea/index.vue')['default']
     NButton: typeof import('naive-ui')['NButton']
     NCard: typeof import('naive-ui')['NCard']

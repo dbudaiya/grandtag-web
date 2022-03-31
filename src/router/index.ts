@@ -1,7 +1,22 @@
 //router目录下的index.js
-import { createRouter, createWebHashHistory, createWebHistory } from 'vue-router'
-import { R } from '@/api'
+import { createRouter, createWebHistory, RouteRecordRaw, } from 'vue-router';
+import { routes_info } from '@/mock/routes.ts'
 
+
+// const routes: RouteRecordRaw[] = []
+// routes_info.forEach((i, k) => {
+//   if (k == 0) {
+
+//   }
+//   router.push({
+//     path: "/home",
+//     name: "Home",
+//     alias: "/",
+//     component: () => import("../views/Home.vue")
+//   })
+
+//   console.log(k)
+// });
 const routes = [
   {
     path: "/home",
@@ -36,7 +51,6 @@ const router = createRouter({
 //前置守卫
 router.beforeEach((to, from, next) => {
   console.log('路由全局前置守卫', to, from);
-  R.clearPending()
   next()
 })
 //后置守卫

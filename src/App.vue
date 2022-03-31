@@ -31,11 +31,11 @@ export default defineComponent({
   <n-config-provider :theme="theme" :theme-overrides="themeOverrides">
     <n-theme-editor>
       <n-message-provider>
-        <n-button @click="theme = darkTheme">深色</n-button>
-        <n-button @click="theme = null">浅色</n-button>
+        <!-- <n-button @click="theme = darkTheme">深色</n-button>
+        <n-button @click="theme = null">浅色</n-button>-->
         <Content />
       </n-message-provider>
-        <n-global-style />
+      <n-global-style />
     </n-theme-editor>
   </n-config-provider>
 </template>

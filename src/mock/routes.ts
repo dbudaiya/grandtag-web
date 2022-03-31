@@ -1,30 +1,30 @@
 // 路由信息表
 export const routes_info = [{
-  link: "/home",
-  title: '首页'
+  path: "/home",
+  name: '首页'
 },
 {
-  link: "/testimonials",
-  title: '客户见证'
+  path: "/vision",
+  name: '客户见证'
 },
 {
-  link: "/specialties",
-  title: '8项专长'
+  path: "/special",
+  name: '8项专长'
 },
 {
-  link: "/vision-career",
-  title: '职业愿景'
+  path: "/vision",
+  name: '职业愿景'
 },
 {
-  link: "/lectures",
-  title: '讲座'
+  path: "/lecture",
+  name: '讲座'
 },
 {
-  link: '/reward-promotion',
-  title: '$300奖励'
+  path: '/reward',
+  name: '$300奖励'
 },
 {
-  link: '/contect-faq',
-  title: '联系我们&问答'
+  path: '/contact',
+  name: '联系我们&问答'
 }
 ];

@@ -1,13 +1,15 @@
 <template>
-  <div>sas</div>
+  <div class="container ax-auto">sas</div>
 </template>
 
-<script>
-export default {
-  name: 'footer-cpn'
+<script lang="ts">
 
-}
+import { defineComponent, ref } from 'vue'
+
+export default defineComponent({
+  components: {
+  }
+
+})
+
 </script>
-
-<style>
-</style>
