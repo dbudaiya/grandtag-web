@@ -4,7 +4,7 @@
 
 <script lang="ts">
 import { defineComponent, reactive } from 'vue';
-import { routes_info } from '@/mock/routes'
+import { routes_info } from '~/mock/routes.ts'
 
 export default defineComponent({
 

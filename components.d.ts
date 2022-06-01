@@ -5,24 +5,19 @@
 declare module 'vue' {
   export interface GlobalComponents {
     Footer: typeof import('./src/components/footer/index.vue')['default']
-    FooterCpn: typeof import('./src/components/footerCpn/index.vue')['default']
     Header: typeof import('./src/components/header/index.vue')['default']
-    HeaderTop: typeof import('./src/components/header/headerTop/index.vue')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
     Navbar: typeof import('./src/components/header/components/navbar.vue')['default']
-    NavbarArea: typeof import('./src/components/header/navbarArea/index.vue')['default']
     NButton: typeof import('naive-ui')['NButton']
-    NCard: typeof import('naive-ui')['NCard']
     NConfigProvider: typeof import('naive-ui')['NConfigProvider']
     NGlobalStyle: typeof import('naive-ui')['NGlobalStyle']
-    NIcon: typeof import('naive-ui')['NIcon']
     NMessageProvider: typeof import('naive-ui')['NMessageProvider']
-    NSpace: typeof import('naive-ui')['NSpace']
+    NModal: typeof import('naive-ui')['NModal']
     NThemeEditor: typeof import('naive-ui')['NThemeEditor']
+    PopVideo: typeof import('./src/components/pop-video/index.vue')['default']
+    TapSidesToSeek: typeof import('./src/components/pop-video/TapSidesToSeek.vue')['default']
     Title: typeof import('./src/components/title/index.vue')['default']
-    TitleCpn: typeof import('./src/components/titleCpn/index.vue')['default']
     Todo: typeof import('./src/components/todo/index.vue')['default']
-    TodoCpn: typeof import('./src/components/todoCpn/index.vue')['default']
   }
 }
 

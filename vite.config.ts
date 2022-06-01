@@ -1,4 +1,4 @@
-import path from 'path';
+import { resolve } from 'path';
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import { viteMockServe } from "vite-plugin-mock"
@@ -7,6 +7,36 @@ import { NaiveUiResolver } from 'unplugin-vue-components/resolvers'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: './',
+  server: {
+    host: "localhost",
+    port: 3000,
+    open: true,
+    proxy: {
+      '/api': {
+        target: 'http://localhost:3333/',
+        changeOrigin: true,
+        ws: true,
+        rewrite: (pathStr) => pathStr.replace('/api', '')
+      },
+    },
+  },
+  "build": {
+    minify: 'terser',
+    terserOptions: {
+      compress: {  //构建环境禁止调试
+        drop_console: true,
+        drop_debugger: true
+      }
+    },
+    rollupOptions: {
+      output: {
+        chunkFileNames: 'js/[name]-[hash].js',
+        entryFileNames: 'js/[name]-[hash].js',
+        assetFileNames: '[ext]/[name]-[hash].[ext]'
+      }
+    }
+  },
   plugins: [
     vue(),
     viteMockServe({
@@ -17,34 +47,22 @@ export default defineConfig({
       resolvers: [NaiveUiResolver()]
     })
   ],
-  base: './',
-  server: {
-    host: "localhost",
-    port: 3000,
-    open: true,
-    // // 是否开启 https
-    // https: false,
-    // // 服务端渲染
-    // ssr: false,
-    proxy: {
-      '/api': {
-        target: 'http://localhost:3333/',
-        changeOrigin: true,
-        ws: true,
-        rewrite: (pathStr) => pathStr.replace('/api', '')
+  resolve: {
+    alias: {
+      '~': resolve(__dirname, 'src'),
+      '~cpm': resolve(__dirname, 'src/components'),
+      '~views': resolve(__dirname, 'src/views'),
+      '/img': './src/assets/img'
+    },
+    extensions: ['.mjs', '.js', '.ts', '.tsx', '.json']
+  },
+  css: {
+    // css预处理器
+    preprocessorOptions: {
+      less: {
+        charset: false,
+        additionalData: '@import "./src/style/global.less";',
       },
     },
   },
-  resolve: {
-    alias: {
-      '@': path.resolve(__dirname, './src'),
-      views: path.resolve(__dirname, './src/views'),
-      components: path.resolve(__dirname, './src/components'),
-      utils: path.resolve(__dirname, './src/utils'),
-      assets: path.resolve(__dirname, "./src/assets"),
-      store: path.resolve(__dirname, "./src/store"),
-      types: path.resolve(__dirname, "./src/types"),
-    },
-    extensions: ['.mjs', '.js', '.ts', '.tsx', '.json']
-  }
 })

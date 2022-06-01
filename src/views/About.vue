@@ -12,7 +12,7 @@
 </template>
 
 <script lang="ts">
-import '../mock/index.ts'
+import '../mock'
 import { defineComponent, onMounted, ref } from "vue";
 import axios from "axios"
 import { useI18n } from "vue-i18n";

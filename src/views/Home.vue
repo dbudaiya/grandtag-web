@@ -6,7 +6,7 @@
     </n-icon>
   <n-button @click="handleClick">naive-ui</n-button>-->
   <div class="container bg-indigo-400 mx-auto">
-    <div class="text-4xl m-4 p-4 text-center">Home页面</div>
+    <div class="text-4xl m-4 p-4 text-center">Home页面1</div>
   </div>
 </template>
 <script lang="ts">

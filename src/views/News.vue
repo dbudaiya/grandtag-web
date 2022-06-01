@@ -7,7 +7,7 @@
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
-import { HomeService } from '@/api'
+import { HomeService } from '~/api'
 
 export default defineComponent({
   setup() {
@@ -19,7 +19,7 @@ export default defineComponent({
       const res = await HomeService.getBanner1()
       console.log(res)
     }
-    return { headle, headle1, isMenuOpen: ref(false) }0.
+    return { headle, headle1, isMenuOpen: ref(false) }
     
   }
 })

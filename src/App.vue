@@ -33,6 +33,7 @@ export default defineComponent({
       <n-message-provider>
         <!-- <n-button @click="theme = darkTheme">深色</n-button>
         <n-button @click="theme = null">浅色</n-button>-->
+        <img src="/img/come1@3x.png" alt="">
         <Content />
       </n-message-provider>
       <n-global-style />

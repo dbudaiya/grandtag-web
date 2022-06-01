@@ -4,7 +4,7 @@ export const routes_info = [{
   name: '首页'
 },
 {
-  path: "/vision",
+  path: "/witness",
   name: '客户见证'
 },
 {

@@ -1,6 +1,6 @@
 //router目录下的index.js
 import { createRouter, createWebHistory, RouteRecordRaw, } from 'vue-router';
-import { routes_info } from '@/mock/routes.ts'
+import { routes_info } from '~/mock/routes.ts'
 
 
 // const routes: RouteRecordRaw[] = []
@@ -20,27 +20,44 @@ import { routes_info } from '@/mock/routes.ts'
 const routes = [
   {
     path: "/home",
-    name: "Home",
+    name: "首页",
     alias: "/",
-    component: () => import("../views/Home.vue")
+    component: () => import("../views/home/index.vue")
   },
   {
-    path: "/about",
-    name: "About",
-    alias: "/about",
-    component: () => import("../views/About.vue")
+    path: "/witness",
+    name: "客户见证",
+    component: () => import("../views/witness/index.vue")
   },
   {
-    path: "/video",
-    name: "video",
-    alias: "/video",
-    component: () => import("../views/Video.vue")
+    path: "/special",
+    name: "8项专长",
+    component: () => import("../views/special/index.vue")
   },
   {
-    path: "/news",
-    name: "News",
-    alias: "/news",
-    component: () => import("../views/News.vue")
+    path: "/vision",
+    name: "职业愿景",
+    component: () => import("../views/vision/index.vue")
+  },
+  {
+    path: "/lecture",
+    name: "讲座",
+    component: () => import("../views/lecture/index.vue")
+  },
+  {
+    path: "/reward",
+    name: "$300奖励",
+    component: () => import("../views/reward/index.vue")
+  },
+  {
+    path: "/reward-detail/:id",
+    name: "奖励详情",
+    component: () => import("../views/reward/reward-detail.vue")
+  },
+  {
+    path: "/contact",
+    name: "联系我们&问答",
+    component: () => import("../views/contact/index.vue")
   }
 ]
 
